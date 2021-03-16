@@ -9,9 +9,10 @@
 
 - name: Install CNTLM for enterprise proxy (sourceforge)
   tags: cntlm
-  yum: >
-    name="https://downloads.sourceforge.net/project/cntlm/cntlm/cntlm%20{{ cntlm_version }}/cntlm_{{ cntlm_version_sourceforge }}.x86_64.rpm"
-    state=present
+  yum:
+    name: "https://downloads.sourceforge.net/project/cntlm/cntlm/cntlm%20{{ cntlm_version }}/cntlm_{{ cntlm_version_sourceforge }}.x86_64.rpm"
+    state: present
+    disable_gpg_check: true
   when: cntlm_package_file is not defined
 
 - name: Ensure run directory exists with right permissions
