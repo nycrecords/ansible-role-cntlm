@@ -15,6 +15,12 @@
     state: present
   when: cntlm_package_file is not defined
 
+- name: Ensure run directory is created on boot
+  copy:
+    dest: /usr/lib/tmpfiles.d/cntlm.conf
+    content: |
+      d /run/cntlm   700 cntlm cntlm
+
 - name: Ensure run directory exists with right permissions
   file:
     group: cntlm
