@@ -1,5 +1,4 @@
 ---
-
 - name: Copy package to server
   copy:
      src: "{{ cntlm_package_file }}"

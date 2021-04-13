@@ -19,7 +19,7 @@
   copy:
     dest: /usr/lib/tmpfiles.d/cntlm.conf
     content: |
-      d /run/cntlm   700 cntlm cntlm
+      d /var/run/cntlm   700 cntlm cntlm
 
 - name: Ensure run directory exists with right permissions
   file:
